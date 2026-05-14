@@ -54,52 +54,44 @@ export default function Footer() {
         {/* Middle Section — Sister Companies + Advantages + Legal */}
         <div className="md:col-span-2 space-y-10">
 
-          {/* Sister Companies — Side by Side */}
+          {/* Sister Companies — WITH LOGOS */}
           <div>
-            <p className="text-gray-300 text-sm mb-4">
+            <p className="text-gray-300 text-sm mb-4 text-center md:text-left">
               Visit our sister companies:
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-[460px]">
+            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               {/* Immigration Services */}
               <a
-                href="https://1stcalluk-96op.vercel.app/"
+                href="https://www.1stcalluk.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white rounded-lg shadow-md hover:shadow-lg transition p-4 flex flex-col items-center justify-center w-[220px]"
+                className="bg-white rounded-lg shadow-sm hover:shadow-md transition p-3 flex items-center justify-center w-[180px] h-[100px]"
               >
                 <Image
                   src="/1st-calluk-immigration-logo.jpg"
                   alt="1st Call UK Immigration Services"
-                  width={200}
-                  height={90}
+                  width={150}
+                  height={60}
                   className="object-contain"
                 />
-                <span className="text-xs font-semibold text-[#2d459c] mt-2 text-center">
-                  Immigration Services
-                </span>
               </a>
 
-              {/* Group */}
-              <a
-                href="https://1st-call-uk-group.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white rounded-lg shadow-md hover:shadow-lg transition p-4 flex flex-col items-center justify-center w-[220px]"
-              >
-                <Image
-                  src="/1st-CallUK-group-logo.jpg"
-                  alt="1st Call UK Group"
-                  width={200}
-                  height={90}
-                  className="object-contain"
-                />
-                <span className="text-xs font-semibold text-[#2d459c] mt-2 text-center">
-                  Group
-                </span>
-              </a>
-            </div>
-          </div>
+             {/* 1st Call UK Group */}
+<a
+  href="/1stcalluk-group"
+  className="bg-white rounded-lg shadow-sm hover:shadow-md transition p-3 flex items-center justify-center w-[180px] h-[100px]"
+>
+  <Image
+    src="/1stCallUK_group_logo02.jpg"
+    alt="1st Call UK Group"
+    width={170} // Increased from 150
+    height={85} // Increased from 60
+    className="object-contain"
+  />
+</a>
+</div>
+</div>
 
           {/* Advantages + Legal */}
           <div className="grid md:grid-cols-2 gap-10">
