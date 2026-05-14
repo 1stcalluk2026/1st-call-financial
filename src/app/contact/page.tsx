@@ -82,14 +82,14 @@ export default function ContactPage() {
         strategy="afterInteractive"
       />
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 contact-fade">
+      <div className="max-w-2xl mx-auto contact-fade">
         <div className="bg-white rounded-2xl shadow-md p-8">
           <h1 className="text-3xl font-bold text-[#2d459c] mb-4 text-center">
             Contact Us
           </h1>
 
           <p className="text-gray-700 mb-6 leading-relaxed">
-            You may <strong>send us a message</strong> or <strong>book a consultation</strong> with one
+            You may <strong>send us a message</strong> with one
             of our experienced financial advisers.
             <br /><br />
             We aim to respond to all enquiries within <strong>two working days</strong>.
@@ -228,40 +228,6 @@ export default function ContactPage() {
               </p>
             )}
           </form>
-        </div>
-
-        {/* RIGHT — Calendly Booking Widget */}
-        <div className="bg-white rounded-2xl shadow-md p-6">
-          <h2 className="text-2xl font-bold text-[#2d459c] mb-4 text-center">
-            Book a Call (15 Minutes)
-          </h2>
-          <div className="mb-6 text-left">
-            <p className="text-sm text-gray-600">
-              <strong>15-Minute Consultation with James</strong><br />
-              A complimentary session to discuss your enquiry and provide initial guidance. 
-              Online bookings are for <strong>phone consultations only</strong> (Mon–Fri: 09:00–10:00 or after 16:30).
-            </p>
-            <p className="mt-2 text-sm text-gray-600">
-              For in-person, Teams, or extended meetings, please contact us directly. 
-              <strong>Fastest contact:</strong> Call 0115 8453325 (Option 1, then 1). Note: Lines are frequently busy.
-            </p>
-            <p className="mt-2 text-sm text-gray-600">
-              <strong>International Clients:</strong> We do not place outbound calls abroad. 
-              Please call us at your scheduled time or contact us via email.
-            </p>
-          </div>
-          <iframe
-            src="https://calendly.com/1stcalluk-info/15min"
-            className="rounded-lg border border-gray-200 shadow-sm w-full"
-            style={{
-              height: "580px",
-              minWidth: "100%",
-              border: "0"
-            }}
-            frameBorder="0"
-            scrolling="yes"
-            title="Book a consultation"
-          ></iframe>
         </div>
       </div>
 

@@ -62,7 +62,7 @@ export default function Header() {
             {/* DESKTOP CONTACT BUTTONS */}
             <div className="hidden md:flex gap-4 w-[260px] justify-center">
               <a
-                href="tel:+441158453325"
+                href="tel:+441158453265"
                 className="bg-white text-[#2d459c] font-semibold py-2.5 w-1/2 rounded-lg shadow hover:bg-gray-100 transition flex items-center justify-center gap-2"
               >
                 📞 Call Us
