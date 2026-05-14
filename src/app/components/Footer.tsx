@@ -146,7 +146,7 @@ export default function Footer() {
               ✉ Email
             </a>
             <a
-              href="tel:+441158453325"
+              href="tel:+441158453265"
               className="bg-white text-[#2d459c] font-semibold py-2 px-5 rounded-md hover:bg-gray-100 flex items-center justify-center transition"
             >
               ☎ Call
