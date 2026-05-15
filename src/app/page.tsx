@@ -58,11 +58,12 @@ export default function HomePage() {
           </h2>
 
           <p className="text-lg text-gray-700 mb-6">
-            <span className="text-[#2d459c] font-semibold">
-              A modern, digital-first accountancy practice
-            </span>{" "}
-            supporting individuals, contractors, landlords, and growing businesses across the UK.
-          </p>
+          <span className="text-[#2d459c] font-semibold">
+          Trusted Accountants & Financial Advisers in Nottingham
+         </span>
+         {" — "}
+        A modern, digital-first accountancy practice supporting individuals, contractors, landlords, and growing businesses across the UK.
+        </p>
 
           <p>
             1st Call UK Financial Services provides clear, reliable, and forward-thinking accounting
