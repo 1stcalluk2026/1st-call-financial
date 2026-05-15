@@ -1,28 +1,29 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Immigration Services & Visa Support | 1st Call UK",
+  title: "Professional Financial Services | Mortgages & Pensions | 1st Call UK",
   description:
-    "Professional UK immigration services covering visas, extensions, family applications, appeals, sponsorship and complex Home Office matters.",
+    "Expert financial services in Nottingham. We provide professional advice on mortgages, retirement planning, investments, and comprehensive wealth management.",
 
   // Canonical URL for SEO
   alternates: {
-    canonical: "https://1stcalluk.com/our-immigration-services",
+    canonical: "https://www.1stcalluk.financial/our-financial-services",
   },
 
   // OpenGraph metadata for social previews
   openGraph: {
-    title: "Immigration Services & Visa Support | 1st Call UK",
+    title: "Financial Planning & Mortgage Services | 1st Call UK",
     description:
-      "Professional UK immigration services covering visas, extensions, family applications, appeals, sponsorship and complex Home Office matters.",
-    url: "https://1stcalluk.com/our-immigration-services",
-    type: "article",
+      "Achieve your financial goals with 1st Call UK Financial Services. Expert guidance on home loans, pensions, and investment strategies.",
+    url: "https://www.1stcalluk.financial/our-financial-services",
+    type: "website",
+    siteName: "1st Call UK Financial Services",
     images: [
       {
-        url: "https://1stcalluk.com/og-image.jpg",
+        url: "https://www.1stcalluk.financial/og-image-services.jpg",
         width: 1200,
         height: 630,
-        alt: "UK Immigration Services by 1st Call UK",
+        alt: "Financial Services by 1st Call UK Financial",
       },
     ],
   },
@@ -44,16 +45,50 @@ export default function ServicesLayout({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            serviceType: "UK Immigration Advice & Representation",
+            serviceType: "Financial Advisory & Mortgage Brokering",
             provider: {
-              "@type": "LegalService",
-              name: "1st Call UK Immigration Services",
-              url: "https://1stcalluk.com/our-immigration-services",
+              "@type": "FinancialService",
+              name: "1st Call UK Financial Services",
+              url: "https://www.1stcalluk.financial",
               telephone: "+441158453325",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "25 St James's St",
+                addressLocality: "Nottingham",
+                postalCode: "NG1 6FH",
+                addressCountry: "GB",
+              },
             },
             areaServed: "United Kingdom",
             description:
-              "Expert UK immigration advice covering visas, appeals, family settlement, work visas and sponsor licences.",
+              "Comprehensive financial services including residential and commercial mortgages, pension reviews, and investment portfolio management.",
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "Financial Services",
+              itemListElement: [
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Mortgage Advice"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Retirement Planning"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Wealth Management"
+                  }
+                }
+              ]
+            }
           }),
         }}
       />

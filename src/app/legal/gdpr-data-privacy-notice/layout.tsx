@@ -1,26 +1,35 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "GDPR & Data Privacy Notice | 1st Call UK",
+  title: "GDPR & Data Privacy Notice | 1st Call UK Financial Services",
   description:
-    "Read our GDPR and Data Privacy Notice explaining how 1st Call UK collects, stores and protects your personal information in line with UK data protection law.",
+    "Review our GDPR and Data Privacy Notice. Learn how 1st Call UK Financial Services securely manages and protects your sensitive financial data under UK law.",
 
   // Canonical URL
   alternates: {
     canonical:
-      "https://www.1stcallukimmigration.co.uk/legal/gdpr-data-privacy-notice",
+      "https://www.1stcalluk.financial/legal/gdpr-data-privacy-notice",
   },
 
   // OpenGraph metadata
   openGraph: {
-    title: "GDPR & Data Privacy Notice | 1st Call UK",
+    title: "Data Privacy & GDPR Compliance | 1st Call UK Financial",
     description:
-      "Learn how 1st Call UK collects, manages and protects your personal data under UK GDPR and data protection law.",
-    url: "https://www.1stcallukimmigration.co.uk/legal/gdpr-data-privacy-notice",
+      "Our commitment to your privacy: Learn how we collect, store, and protect your personal and financial information in compliance with UK GDPR.",
+    url: "https://www.1stcalluk.financial/legal/gdpr-data-privacy-notice",
     type: "article",
-    siteName: "1st Call UK Immigration Services",
+    siteName: "1st Call UK Financial Services",
+    images: [
+      {
+        url: "https://www.1stcalluk.financial/og-image-privacy.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Data Privacy and GDPR Compliance | 1st Call UK Financial",
+      },
+    ],
   },
 };
+
 // ✅ REQUIRED NEXT.JS LAYOUT WRAPPER
 export default function LegalPageLayout({
   children,

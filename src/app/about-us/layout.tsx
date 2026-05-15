@@ -1,28 +1,28 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | 1st Call UK Immigration Services",
+  title: "About Us | 1st Call UK Financial Services",
   description:
-    "Learn about 1st Call UK Immigration Services, our expertise, and our commitment to helping individuals, families and businesses with UK visa and appeal matters.",
+    "Discover the expertise behind 1st Call UK Financial Services. We are dedicated to providing independent mortgage, pension, and investment advice to individuals and businesses in Nottingham.",
 
   // Canonical URL for SEO
   alternates: {
-    canonical: "https://1stcalluk.com/about-us",
+    canonical: "https://www.1stcalluk.financial/about-us",
   },
 
   // OpenGraph metadata for richer previews
   openGraph: {
-    title: "About Us | 1st Call UK Immigration Services",
+    title: "About Us | 1st Call UK Financial Services",
     description:
-      "Learn about 1st Call UK Immigration Services and our commitment to UK visa and appeal support for individuals, families and businesses.",
-    url: "https://1stcalluk.com/about-us",
+      "Learn about our commitment to professional financial planning, wealth management, and expert mortgage advice at 1st Call UK Financial Services.",
+    url: "https://www.1stcalluk.financial/about-us",
     type: "article",
     images: [
       {
-        url: "https://1stcalluk.com/og-image.jpg",
+        url: "https://www.1stcalluk.financial/og-image-about.jpg",
         width: 1200,
         height: 630,
-        alt: "About 1st Call UK Immigration Services",
+        alt: "About 1st Call UK Financial Services",
       },
     ],
   },

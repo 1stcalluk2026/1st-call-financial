@@ -3,21 +3,29 @@ import type { Metadata } from "next";
 export const dynamic = "force-dynamic"; // ✅ REQUIRED FOR PREVIEW ROUTES
 
 export const metadata: Metadata = {
-  title: "UK Immigration News & Insights | 1st Call UK",
+  title: "UK Financial News & Insights | 1st Call UK Financial",
   description:
-    "Expert articles on UK immigration law, visas, appeals, sponsorship and Home Office updates written by experienced immigration advisers.",
+    "Expert articles on UK financial planning, taxation, retirement strategies, and mortgage insights written by experienced financial advisers.",
 
   alternates: {
-    canonical: "https://www.1stcallukimmigration.co.uk/blog",
+    canonical: "https://www.1stcalluk.financial/blog",
   },
 
   openGraph: {
-    title: "UK Immigration News & Insights | 1st Call UK",
+    title: "UK Financial News & Insights | 1st Call UK",
     description:
-      "Expert articles on UK immigration law, visas, appeals, sponsorship and Home Office updates written by experienced immigration advisers.",
-    url: "https://www.1stcallukimmigration.co.uk/blog",
-    type: "article",
-    siteName: "1st Call UK Immigration Services",
+      "Stay informed with the latest UK financial trends, tax efficiency tips, and wealth management strategies from 1st Call UK Financial Services.",
+    url: "https://www.1stcalluk.financial/blog",
+    type: "website",
+    siteName: "1st Call UK Financial Services",
+    images: [
+      {
+        url: "https://www.1stcalluk.financial/og-image-blog.jpg",
+        width: 1200,
+        height: 630,
+        alt: "1st Call UK Financial Insights Blog",
+      },
+    ],
   },
 };
 
@@ -30,21 +38,24 @@ export default function BlogLayout({
     <>
       {children}
 
+      {/* ===== BLOG SCHEMA ===== */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Blog",
-            name: "1st Call UK Immigration Blog",
-            url: "https://www.1stcallukimmigration.co.uk/blog",
+            name: "1st Call UK Financial Insights",
+            url: "https://www.1stcalluk.financial/blog",
             description:
-              "Latest UK immigration news, legal updates, visa guidance and appeal strategies.",
+              "Expert guidance on UK financial planning, mortgage trends, pension regulations, and tax efficiency.",
             publisher: {
               "@type": "Organization",
-              name: "1st Call UK Immigration Services",
-              logo:
-                "https://www.1stcallukimmigration.co.uk/1st-calluk-logo02.jpg",
+              name: "1st Call UK Financial Services",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.1stcalluk.financial/1st-calluk-financial-logo.jpg"
+              },
             },
           }),
         }}

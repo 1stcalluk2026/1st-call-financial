@@ -1,26 +1,34 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | 1st Call UK Immigration Services",
+  title: "Cookie Policy | 1st Call UK Financial Services",
   description:
-    "Read the Cookie Policy for 1st Call UK Immigration Services. Learn how cookies are used on our website and how we handle data to improve your browsing experience.",
+    "Review the Cookie Policy for 1st Call UK Financial Services. Understand how we use cookies to provide a secure and optimized experience for our financial clients.",
 
   // Canonical URL
   alternates: {
-    canonical: "https://www.1stcallukimmigration.co.uk/legal/cookie-policy",
+    canonical: "https://www.1stcalluk.financial/legal/cookie-policy",
   },
 
   // OpenGraph metadata
   openGraph: {
-    title: "Cookie Policy | 1st Call UK Immigration Services",
+    title: "Cookie Policy | 1st Call UK Financial Services",
     description:
-      "Read the Cookie Policy for 1st Call UK Immigration Services and learn how we use cookies and manage website data to improve your browsing experience.",
-    url: "https://www.1stcallukimmigration.co.uk/legal/cookie-policy",
+      "Learn about our use of cookies and data management practices designed to protect your privacy while using our financial advisory services.",
+    url: "https://www.1stcalluk.financial/legal/cookie-policy",
     type: "article",
-    siteName: "1st Call UK Immigration Services",
+    siteName: "1st Call UK Financial Services",
+    images: [
+      {
+        url: "https://www.1stcalluk.financial/og-image-legal.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Legal and Privacy Policies | 1st Call UK Financial",
+      },
+    ],
   },
-  
 };
+
 // ✅ REQUIRED NEXT.JS LAYOUT WRAPPER
 export default function LegalPageLayout({
   children,

@@ -1,24 +1,31 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Consumer Contracts Regulations 2013 | Your Rights Explained",
+  title: "Consumer Protection & Rights | 1st Call UK Financial",
   description:
-    "Clear guidance on your rights under the Consumer Contracts Regulations 2013, including cancellations, refunds and protections for online and distance sales.",
+    "Information on your rights under the Consumer Contracts Regulations and FCA standards, including cancellations and protections for financial service agreements.",
   alternates: {
     canonical:
-      "https://www.1stcallukimmigration.co.uk/legal/consumer-contracts-regulations-2013",
+      "https://www.1stcalluk.financial/legal/consumer-contracts-regulations-2013",
   },
   openGraph: {
-    title: "Consumer Contracts Regulations 2013 | Your Rights Explained",
+    title: "Consumer Rights & Financial Protections | 1st Call UK",
     description:
-      "Understand your rights under the Consumer Contracts Regulations 2013, including rules for cancellations, refunds and protections for online and distance purchases.",
-    url: "https://www.1stcallukimmigration.co.uk/legal/consumer-contracts-regulations-2013",
+      "Understand your consumer rights regarding financial service contracts, including cooling-off periods and cancellation protections.",
+    url: "https://www.1stcalluk.financial/legal/consumer-contracts-regulations-2013",
     type: "article",
-    siteName: "1st Call UK Immigration Services",
+    siteName: "1st Call UK Financial Services",
+    images: [
+      {
+        url: "https://www.1stcalluk.financial/og-image-consumer-rights.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Consumer Protection for Financial Services",
+      },
+    ],
   },
 };
 
-// ✅ REQUIRED NEXT.JS LAYOUT WRAPPER
 export default function LegalPageLayout({
   children,
 }: {
