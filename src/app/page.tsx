@@ -1,16 +1,34 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
-export const metadata = {
-  title: "Accountants & Tax Advisers in Nottingham | 1st Call UK Financial Services",
-  description:
-    "Professional accountants and tax advisers in Nottingham. Specialists in Xero, Making Tax Digital (MTD), bookkeeping, payroll, VAT and business advisory services."
+// Helper component for the FAQ Accordion
+const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="border-b border-gray-200 py-5">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex justify-between items-center text-left font-bold text-[#2d459c] text-lg hover:text-blue-800 transition-colors"
+      >
+        <span>{question}</span>
+        <span className="text-2xl ml-4">{isOpen ? "−" : "+"}</span>
+      </button>
+      {isOpen && (
+        <div className="mt-4 text-gray-700 leading-relaxed text-base animate-fade-in">
+          {answer}
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-gray-50">
       {/* ===== Hero Section ===== */}
-<header className="relative min-h-[240px] sm:h-[50vh] md:h-[55vh] overflow-hidden mb-8">
+      <header className="relative min-h-[240px] sm:h-[50vh] md:h-[55vh] overflow-hidden mb-8">
         <Image
           src="/financial-services-team.jpg"
           alt="Professional accountants and financial advisers in Nottingham"
@@ -19,7 +37,7 @@ export default function HomePage() {
           sizes="100vw"
           className="object-cover"
         />
-<div className="absolute inset-0 bg-[#2d459c]/80 flex flex-col items-center justify-center text-center px-3 sm:px-6 md:px-10 animate-fade-in">
+        <div className="absolute inset-0 bg-[#2d459c]/80 flex flex-col items-center justify-center text-center px-3 sm:px-6 md:px-10 animate-fade-in">
           <h1 className="text-white text-2xl sm:text-3xl md:text-5xl font-extrabold mb-2 sm:mb-3 md:mb-4 drop-shadow-lg leading-snug">
             Trusted Accountants & Financial Advisers in Nottingham
           </h1>
@@ -84,7 +102,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Right column image */}
         <div className="relative rounded-2xl overflow-hidden shadow-xl w-full max-w-md md:self-start mt-20">
           <Image
             src="/homepage-body-team.jpg"
@@ -147,14 +164,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== Professional Accreditation Section (FINAL) ===== */}
+      {/* ===== Professional Accreditation Section ===== */}
       <section className="bg-gray-50 py-20 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-6 text-center">
-
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#2d459c] mb-4">
             Professional Standards You Can Trust
           </h2>
-
           <p className="text-gray-600 max-w-3xl mx-auto mb-14">
             Our services are delivered in line with recognised professional standards,
             supported by accredited expertise in accounting, payroll, taxation, and
@@ -163,46 +178,54 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 items-center">
             <div className="flex justify-center">
-              <Image
-                src="/aat.jpeg"
-                alt="AAT Professional Accountant"
-                width={160}
-                height={160}
-                className="object-contain"
-              />
+              <Image src="/aat.jpeg" alt="AAT Professional Accountant" width={160} height={160} className="object-contain" />
             </div>
-
             <div className="flex justify-center">
-              <Image
-                src="/Payroll specialist01.png"
-                alt="Payroll Specialist"
-                width={200}
-                height={140}
-                className="object-contain"
-              />
+              <Image src="/Payroll specialist01.png" alt="Payroll Specialist" width={200} height={140} className="object-contain" />
             </div>
-
             <div className="flex justify-center">
-              <Image
-                src="/Tax specialist capsule.png"
-                alt="Tax Specialist"
-                width={260}
-                height={120}
-                className="object-contain"
-              />
+              <Image src="/Tax specialist capsule.png" alt="Tax Specialist" width={260} height={120} className="object-contain" />
             </div>
-
             <div className="flex justify-center">
-              <Image
-                src="/Xero Certified.png"
-                alt="Xero Certified Advisor"
-                width={180}
-                height={180}
-                className="object-contain"
-              />
+              <Image src="/Xero Certified.png" alt="Xero Certified Advisor" width={180} height={180} className="object-contain" />
             </div>
           </div>
+        </div>
+      </section>
 
+      {/* ===== FAQ SECTION (Adds ~400 words for SEO) ===== */}
+      <section className="bg-white py-20 px-6 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2d459c] mb-10 text-left">
+            Frequently Asked Questions
+          </h2>
+          
+          <div className="space-y-2">
+            <FAQItem 
+              question="Why should I choose professional accountants and tax advisers in Nottingham?" 
+              answer="Choosing local accountants and tax advisers in Nottingham like 1st Call UK ensures you have face-to-face support and deep knowledge of UK tax legislation. Professional advisers help you navigate complex HMRC requirements, ensuring that your business remains compliant while identifying legal opportunities to reduce your overall tax liability. This level of expertise is essential for avoiding penalties and maximizing your financial growth." 
+            />
+            <FAQItem 
+              question="What specific services do your accountants and tax advisers provide?" 
+              answer="Our comprehensive suite of services includes statutory year-end accounts, proactive tax planning, VAT returns, and expert payroll management. We also specialize in digital transformations, helping clients set up and manage Xero cloud accounting. Whether you are a small business, a contractor, or a landlord, our tax advisers provide the strategic insight needed to manage property tax, corporate tax, and personal self-assessments efficiently." 
+            />
+            <FAQItem 
+              question="How do you support businesses with Making Tax Digital (MTD)?" 
+              answer="As forward-thinking accountants and tax advisers, we prioritize MTD readiness. We guide our clients through the process of moving from manual records to HMRC-compliant digital software. Our team handles the transition to Xero or other platforms, ensuring your digital records are accurate and that your quarterly submissions are handled seamlessly and on time." 
+            />
+            <FAQItem 
+              question="Can your tax advisers help with HMRC investigations?" 
+              answer="Yes. Having experienced accountants and tax advisers on your side is critical if you are facing an HMRC inquiry. We act as your professional representatives, managing all correspondence, preparing necessary documentation, and ensuring your interests are protected throughout the investigation process. Our goal is to resolve enquiries efficiently while minimizing stress and potential costs." 
+            />
+            <FAQItem 
+              question="Do you offer fixed-fee packages for accounting services?" 
+              answer="Transparency is a core value for our accountants and tax advisers. We offer clear, fixed-fee pricing so you can budget effectively without worrying about hidden costs. This allows us to build long-term partnerships with our clients, providing ongoing advice and support throughout the financial year, not just at year-end." 
+            />
+            <FAQItem 
+              question="How can I switch my accounting to 1st Call UK Financial Services?" 
+              answer="Switching to 1st Call UK is a simple and stress-free process. Our accountants and tax advisers handle everything, including contacting your previous accountant and arranging the transfer of all relevant financial records. We then perform a full review of your current position to ensure your tax planning is optimized from day one." 
+            />
+          </div>
         </div>
       </section>
     </main>

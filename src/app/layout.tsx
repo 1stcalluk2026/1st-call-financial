@@ -6,12 +6,11 @@ export const metadata = {
   metadataBase: new URL("https://www.1stcalluk.financial"),
 
   title: {
-    default: "1st Call UK Financial Services | Expert Financial Advice",
-    template: "%s | 1st Call UK Financial",
+    default: "Accountants & Tax Advisers Nottingham | 1st Call UK",
+    template: "%s | 1st Call UK",
   },
-
   description:
-    "Independent financial advisers in Nottingham. Specialising in mortgage brokering, pension reviews, and wealth management services for individuals and businesses.",
+    "Professional accountants in Nottingham. Experts in Xero, MTD, payroll, and VAT. Trusted business advisory and tax services for UK SMEs.",
 
   robots: "index, follow",
 
