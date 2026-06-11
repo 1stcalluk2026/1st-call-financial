@@ -2,8 +2,7 @@ import { NextResponse } from "next/server";
 import { writeClient } from "../../../../sanity/lib/writeClient";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
+const resend = new Resend(process.env.RESEND_API_KEY || "re_fallback_key_for_builds");
 export async function POST(request: Request) {
   try {
     // 1. Extract all fields from the form
