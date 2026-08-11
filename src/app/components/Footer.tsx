@@ -1,202 +1,204 @@
-"use client";
-
 import Image from "next/image";
+
+const advantages = [
+  "Free initial financial consultation",
+  "Secure online and Microsoft Teams meetings available",
+  "Clients confidently refer us to friends and family",
+  "Transparent, affordable, and high-quality service",
+  "Family-owned and professionally run practice",
+];
+
+const legalLinks = [
+  { href: "/legal/consumer-contracts-regulations-2013", label: "Consumer Contracts Regulations 2013" },
+  { href: "/legal/disclaimer", label: "Disclaimer" },
+  { href: "/legal/gdpr-data-privacy-notice", label: "GDPR Data Privacy Notice" },
+  { href: "/legal/cookie-policy", label: "Cookie Policy" },
+  { href: "/legal/terms-of-website-use", label: "Terms of Website Use" },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2d459c] text-white py-14 px-6 md:px-10">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-10 items-start">
+    <footer className="bg-[#2d459c] text-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 pt-14 pb-10">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 items-start pb-10 border-b border-white/15">
+          {/* Column 1 — Branding & About */}
+          <div className="flex flex-col items-center md:items-start gap-4">
+            <a
+              href="https://www.accaglobal.com/gb/en.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-lg p-2 shadow-sm transition hover:shadow-md"
+            >
+              <Image
+                src="/acca-logo02.png"
+                alt="ACCA qualified accountants and financial professionals"
+                width={160}
+                height={160}
+                className="w-24 h-auto"
+              />
+            </a>
+            <p className="text-white/60 text-xs text-center md:text-left">
+              Regulated by the Association of Chartered Certified Accountants
+            </p>
+            <div className="space-y-2 text-center md:text-left">
+              <h3 className="text-xl font-bold">We Can Help</h3>
+              <p className="text-white/85 leading-relaxed text-sm">
+                At 1st Call UK Financial Services, your success is our priority and
+                supporting your financial journey is at the heart of what we do.
+                We provide clear, reliable, and expert accounting and financial
+                advice. Whatever your tax, bookkeeping, payroll, or business
+                accounting needs, we are here to help.
+              </p>
+            </div>
+          </div>
 
-        {/* Column 1 — Logo & Help */}
-        <div className="flex flex-col items-center md:items-start space-y-4">
-          <a
-            href="https://www.accaglobal.com/gb/en.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src="/acca-logo02.png"
-              alt="ACCA qualified accountants and financial professionals"
-              width={200}
-              height={200}
-              className="w-28 h-auto rounded-md shadow-md hover:scale-105 transition-transform duration-300"
-            />
-          </a>
+          {/* Column 2 — Our Advantages */}
+          <div>
+            <h3 className="text-xl font-bold mb-4 text-center md:text-left">
+              Our Advantages
+            </h3>
+            <ul className="space-y-2.5 text-white/85 text-sm">
+              {advantages.map((text) => (
+                <li key={text} className="flex items-start gap-2.5">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-yellow-300" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          <h3 className="text-xl font-bold">We Can Help</h3>
-          <p className="text-gray-200 leading-relaxed text-sm">
-            At 1st Call UK Financial Services, your success is our priority and
-            supporting your financial journey is at the heart of what we do.
-            <br /><br />
-            We provide clear, reliable, and expert accounting and financial
-            advice. Whatever your tax, bookkeeping, payroll, or business
-            accounting needs, we are here to help.
+          {/* Column 3 — Legal */}
+          <div>
+            <h3 className="text-xl font-bold mb-4 text-center md:text-left">Legal</h3>
+            <ul className="space-y-2.5 text-white/85 text-sm text-center md:text-left">
+              {legalLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="hover:text-white hover:underline underline-offset-2 transition"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4 — Contact */}
+          <div className="space-y-4 text-center md:text-left">
+            <h3 className="text-xl font-bold">Contact Us</h3>
+            <p className="text-white/85 text-sm leading-relaxed">
+              The Old Coach House, 25 Noel Street,
+              <br />
+              Forest Fields, Nottingham NG7 6AQ
+            </p>
+            <div className="flex flex-col gap-3">
+              <a
+                href="mailto:info@1stcalluk.financial"
+                className="bg-white text-[#2d459c] font-semibold py-2.5 px-5 rounded-md hover:bg-white/90 transition text-center"
+              >
+                Email
+              </a>
+              <a
+                href="tel:+441158453265"
+                className="bg-white/10 border border-white/30 text-white font-semibold py-2.5 px-5 rounded-md hover:bg-white/20 transition text-center"
+              >
+                Call 0115 845 3265
+              </a>
+            </div>
+            <div className="flex gap-3 justify-center md:justify-start pt-1">
+              <a
+                href="https://www.facebook.com/1stCallUK2008/?locale=en_GB"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="bg-white/10 hover:bg-white text-white hover:text-[#2d459c] w-10 h-10 flex items-center justify-center rounded-full border border-white/20 transition-colors duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  className="w-4 h-4"
+                  aria-hidden="true"
+                >
+                  <path d="M22.675 0h-21.35C.595 0 0 .595 0 1.326v21.348C0 23.404.595 24 1.326 24h11.495v-9.294H9.691V11.01h3.13V8.41c0-3.1 1.893-4.788 4.657-4.788 1.325 0 2.463.099 2.795.143v3.24h-1.92c-1.506 0-1.797.717-1.797 1.77v2.324h3.592l-.468 3.696h-3.124V24h6.125C23.405 24 24 23.404 24 22.674V1.326C24 .595 23.405 0 22.675 0z" />
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/james-ramowski-0588a139/?originalSubdomain=uk"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="bg-white/10 hover:bg-white text-white hover:text-[#2d459c] w-10 h-10 flex items-center justify-center rounded-full border border-white/20 transition-colors duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  className="w-4 h-4"
+                  aria-hidden="true"
+                >
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.85-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.354V9h3.414v1.561h.048c.476-.9 1.637-1.85 3.368-1.85 3.602 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM6.959 20.452H3.714V9h3.245v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Sister companies — same layout as 1stcalluk.com */}
+        <div className="pt-8">
+          <p className="text-white/70 text-sm mb-4 text-center md:text-left">
+            Visit our sister companies
           </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto md:mx-0">
+            <a
+              href="https://www.1stcalluk.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-md px-3 py-2.5 flex items-center justify-center h-[88px] transition hover:shadow-md"
+            >
+              <Image
+                src="/1stCallUK_immigration-services-footer.jpg"
+                alt="1st Call UK Immigration Services"
+                width={360}
+                height={121}
+                className="h-[72px] w-auto max-w-full object-contain"
+              />
+            </a>
+            <a
+              href="https://www.1stcalluk.co.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-md px-3 py-2.5 flex items-center justify-center h-[88px] transition hover:shadow-md"
+            >
+              <Image
+                src="/1stCallUK_group_logo02.jpg"
+                alt="1st Call UK Group"
+                width={360}
+                height={121}
+                className="h-[72px] w-auto max-w-full object-contain"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
 
-          <a
-            href="/services"
-            className="mt-2 inline-block text-sm font-semibold underline hover:text-white transition"
-          >
-            View All Financial Services →
-          </a>
-
-          <p className="text-gray-400 text-xs mt-4">
-            Website by –{" "}
+      {/* Copyright bar */}
+      <div className="bg-[#233a86] text-white/60 py-4 text-xs">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 pr-20 sm:pr-24 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+          <p>© {new Date().getFullYear()} 1st Call UK Financial Services. All rights reserved.</p>
+          <p className="sm:mr-8">
+            Website by{" "}
             <a
               href="https://www.karoldigital.co.uk/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline hover:text-white transition"
+              className="underline underline-offset-2 hover:text-white transition"
             >
               Karol Digital
             </a>
           </p>
         </div>
-
-        {/* Middle Section — Sister Companies + Advantages + Legal */}
-        <div className="md:col-span-2 space-y-10">
-
-          {/* Sister Companies — WITH LOGOS */}
-          <div>
-            <p className="text-gray-300 text-sm mb-4 text-center md:text-left">
-              Visit our sister companies:
-            </p>
-
-            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-              {/* Immigration Services */}
-              <a
-                href="https://www.1stcalluk.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white rounded-lg shadow-sm hover:shadow-md transition p-3 flex items-center justify-center w-[180px] h-[100px]"
-              >
-                <Image
-                  src="/1st-calluk-immigration-logo.jpg"
-                  alt="1st Call UK Immigration Services"
-                  width={150}
-                  height={60}
-                  className="object-contain"
-                />
-              </a>
-
-              {/* 1st Call UK Group */}
-              <a
-                href="https://www.1stcalluk.co.uk/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white rounded-lg shadow-sm hover:shadow-md transition p-3 flex items-center justify-center w-[180px] h-[100px]"
-              >
-                <Image
-                  src="/1stCallUK_group_logo02.jpg"
-                  alt="1st Call UK Group"
-                  width={170}
-                  height={85}
-                  className="object-contain"
-                />
-              </a>
-            </div>
-          </div>
-
-          {/* Advantages + Legal */}
-          <div className="grid md:grid-cols-2 gap-10">
-
-            {/* Our Advantages */}
-            <div>
-              <h3 className="text-xl font-bold mb-4">Our Advantages</h3>
-              <ul className="space-y-2 text-gray-200 text-sm">
-                {[
-                  "Free initial financial consultation",
-                  "Secure online and Microsoft Teams meetings available",
-                  "Clients confidently refer us to friends and family",
-                  "Transparent, affordable, and high-quality service",
-                  "Family-owned and professionally run practice",
-                ].map((text, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="mr-2">✔</span>
-                    <span>{text}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Legal */}
-            <div>
-              <h3 className="text-xl font-bold mb-4">Legal</h3>
-              <ul className="space-y-2 text-gray-200 text-sm">
-                <li><a href="/legal/consumer-contracts-regulations-2013" className="hover:underline">Consumer Contracts Regulations 2013</a></li>
-                <li><a href="/legal/disclaimer" className="hover:underline">Disclaimer</a></li>
-                <li><a href="/legal/gdpr-data-privacy-notice" className="hover:underline">GDPR Data Privacy Notice</a></li>
-                <li><a href="/legal/cookie-policy" className="hover:underline">Cookie Policy</a></li>
-                <li><a href="/legal/terms-of-website-use" className="hover:underline">Terms of Website Use</a></li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-
-        {/* Column 4 — Contact + Social */}
-        <div>
-          <h3 className="text-xl font-bold mb-4">Contact Us</h3>
-          <p className="text-gray-200 text-sm leading-relaxed">
-            📍 The Old Coach House, 25 Noel Street,<br />
-            Forest Fields, Nottingham NG7 6AQ
-          </p>
-
-          <div className="mt-5 flex flex-col gap-3">
-            <a
-              href="mailto:info@1stcalluk.financial"
-              className="bg-white text-[#2d459c] font-semibold py-2 px-5 rounded-md hover:bg-gray-100 flex items-center justify-center transition"
-            >
-              ✉ Email
-            </a>
-            <a
-              href="tel:+441158453265"
-              className="bg-white text-[#2d459c] font-semibold py-2 px-5 rounded-md hover:bg-gray-100 flex items-center justify-center transition"
-            >
-              ☎ Call
-            </a>
-          </div>
-
-          {/* Social Icons — Updated with 3 Platforms for SEO Audit */}
-          <div className="mt-8">
-            <p className="text-sm font-semibold text-gray-300 mb-3 text-center md:text-left">Follow Our Updates:</p>
-            <div className="flex gap-4 justify-center md:justify-start">
-              {/* LinkedIn */}
-              <a 
-                href="#" 
-                className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors"
-                aria-label="Follow us on LinkedIn"
-              >
-                <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-              </a>
-
-              {/* Facebook */}
-              <a 
-                href="#" 
-                className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors"
-                aria-label="Follow us on Facebook"
-              >
-                <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
-                  <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
-                </svg>
-              </a>
-
-              {/* X (Twitter) */}
-              <a 
-                href="#" 
-                className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors"
-                aria-label="Follow us on X"
-              >
-                <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
       </div>
     </footer>
   );
