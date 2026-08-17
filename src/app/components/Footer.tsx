@@ -1,4 +1,5 @@
 import Image from "next/image";
+import DownloadAppButton from "./DownloadAppButton";
 
 const advantages = [
   "Free initial financial consultation",
@@ -92,6 +93,7 @@ export default function Footer() {
               <br />
               Forest Fields, Nottingham NG7 6AQ
             </p>
+            <DownloadAppButton source="financial" placement="footer" />
             <div className="flex flex-col gap-3">
               <a
                 href="mailto:info@1stcalluk.com"
@@ -145,40 +147,45 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Sister companies — same layout as 1stcalluk.com */}
+        {/* Sister companies */}
         <div className="pt-8">
           <p className="text-white/70 text-sm mb-4 text-center md:text-left">
             Visit our sister companies
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto md:mx-0">
-            <a
-              href="https://www.1stcalluk.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white rounded-md px-3 py-2.5 flex items-center justify-center h-[88px] transition hover:shadow-md"
-            >
-              <Image
-                src="/1stCallUK_immigration-services-footer.jpg"
-                alt="1st Call UK Immigration Services"
-                width={360}
-                height={121}
-                className="h-[72px] w-auto max-w-full object-contain"
-              />
-            </a>
-            <a
-              href="https://www.1stcalluk.co.uk/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white rounded-md px-3 py-2.5 flex items-center justify-center h-[88px] transition hover:shadow-md"
-            >
-              <Image
-                src="/1stCallUK_group_logo02.jpg"
-                alt="1st Call UK Group"
-                width={360}
-                height={121}
-                className="h-[72px] w-auto max-w-full object-contain"
-              />
-            </a>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto md:mx-0">
+            {[
+              {
+                href: "https://www.1stcalluk.com/",
+                src: "/1stCallUK_immigration-services-footer.jpg",
+                alt: "1st Call UK Immigration Services",
+              },
+              {
+                href: "https://www.1stcalluk.co.uk/",
+                src: "/1stCallUK_group_logo02.jpg",
+                alt: "1st Call UK Group",
+              },
+              {
+                href: "https://www.1stcalluk.website/",
+                src: "/1stCallUK_web-design-services-footer.png",
+                alt: "1st Call UK Web & Digital",
+              },
+            ].map((company) => (
+              <a
+                key={company.href}
+                href={company.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white rounded-md px-3 py-2.5 flex items-center justify-center h-[88px] min-w-0 overflow-hidden transition hover:shadow-md"
+              >
+                <Image
+                  src={company.src}
+                  alt={company.alt}
+                  width={360}
+                  height={121}
+                  className={`h-[72px] w-auto max-w-full object-contain ${company.imageClass ?? ""}`}
+                />
+              </a>
+            ))}
           </div>
         </div>
       </div>
