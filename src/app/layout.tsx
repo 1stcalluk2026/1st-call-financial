@@ -71,7 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   "logo": "https://www.1stcalluk.financial/1st-calluk-financial-logo.jpg",
                   "image": "https://www.1stcalluk.financial/financial-adviser-team.png",
                   "telephone": "+441158453325",
-                  "email": "info@1stcalluk.financial",
+                  "email": "info@1stcalluk.com",
                   "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "25 St James's St",

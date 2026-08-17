@@ -1,8 +1,13 @@
 import { NextResponse } from "next/server";
 import { writeClient } from "../../../../sanity/lib/writeClient";
 import { Resend } from "resend";
+import { forwardPortalEnquiry } from "../../../../lib/forwardPortalEnquiry";
 
-const resend = new Resend(process.env.RESEND_API_KEY || "re_fallback_key_for_builds");
+const resend = new Resend(process.env.RESEND_API_KEY);
+const CONTACT_EMAIL = "info@1stcalluk.com";
+const TEST_NOTIFY_EMAIL = "getu4ever@gmail.com";
+const EMAIL_FROM = "1st Call UK <info@1stcalluk.com>";
+
 export async function POST(request: Request) {
   try {
     // 1. Extract all fields from the form
@@ -47,11 +52,11 @@ export async function POST(request: Request) {
     });
 
     // 5. Send admin notification (Professional Lead Report)
-    await resend.emails.send({
-      from: process.env.EMAIL_FROM!,
-      to: process.env.EMAIL_TO!,
-      replyTo: email, 
-      subject: `New Lead: ${name}`,
+    const adminSubject = `New Lead: ${name}`;
+    const adminPayload = {
+      from: EMAIL_FROM,
+      replyTo: email,
+      subject: adminSubject,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; color: #333;">
           <div style="background-color: #2d459c; padding: 10px 20px; color: white; border-radius: 8px 8px 0 0;">
@@ -95,11 +100,21 @@ export async function POST(request: Request) {
           </div>
         </div>
       `.trim(),
+    };
+
+    await resend.emails.send({
+      ...adminPayload,
+      to: CONTACT_EMAIL,
+    });
+    await resend.emails.send({
+      ...adminPayload,
+      to: TEST_NOTIFY_EMAIL,
+      subject: `[Test copy] ${adminSubject}`,
     });
 
     // 6. Auto-reply to user
     await resend.emails.send({
-      from: process.env.EMAIL_FROM!,
+      from: EMAIL_FROM,
       to: email,
       subject: "Confirmation: We received your message",
       html: `
@@ -158,6 +173,17 @@ export async function POST(request: Request) {
         </body>
         </html>
       `,
+    });
+
+    await forwardPortalEnquiry({
+      service: "financial",
+      sourceSite: "1stcalluk.financial",
+      sourceKind: "contact",
+      sourceChannel: source || null,
+      name,
+      email,
+      phone,
+      message,
     });
 
     return NextResponse.json({ success: true });

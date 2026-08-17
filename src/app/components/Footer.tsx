@@ -94,7 +94,7 @@ export default function Footer() {
             </p>
             <div className="flex flex-col gap-3">
               <a
-                href="mailto:info@1stcalluk.financial"
+                href="mailto:info@1stcalluk.com"
                 className="bg-white text-[#2d459c] font-semibold py-2.5 px-5 rounded-md hover:bg-white/90 transition text-center"
               >
                 Email

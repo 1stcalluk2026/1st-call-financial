@@ -68,7 +68,7 @@ export default function Header() {
                 📞 Call Us
               </a>
               <a
-                href="mailto:info@1stcalluk.financial"
+                href="mailto:info@1stcalluk.com"
                 className="bg-white text-[#2d459c] font-semibold py-2.5 w-1/2 rounded-lg shadow hover:bg-gray-100 transition flex items-center justify-center gap-2"
               >
                 ✉ Email Us
@@ -188,7 +188,7 @@ export default function Header() {
               📞 Call
             </a>
             <a
-              href="mailto:info@1stcalluk.financial"
+              href="mailto:info@1stcalluk.com"
               className="bg-white text-[#2d459c] px-4 py-2 rounded-lg"
             >
               ✉ Email
