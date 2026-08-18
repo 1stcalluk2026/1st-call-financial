@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import DownloadAppButton from "./DownloadAppButton";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,7 +30,14 @@ export default function Header() {
 
       {/* GROUP BAR */}
       <div className="bg-[#233a86]">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-2 flex justify-end">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-2 flex justify-end gap-2">
+          <DownloadAppButton source="financial" />
+          <Link
+            href="https://1st-calluk-portal.vercel.app/financial"
+            className="inline-flex items-center rounded-full bg-white/10 text-white border border-white/30 px-4 py-1.5 text-xs font-medium hover:bg-white/20 transition-all duration-200"
+          >
+            Client portal
+          </Link>
           <Link
             href="https://www.1stcalluk.co.uk/"
             target="_blank"
@@ -178,6 +186,8 @@ export default function Header() {
           <MobileLink href="/financial-blog" label="Blog" close={() => setMenuOpen(false)} />
           <MobileLink href="/latest-news" label="Media" close={() => setMenuOpen(false)} />
           <MobileLink href="/contact" label="Contact" close={() => setMenuOpen(false)} />
+
+          <DownloadAppButton source="financial" placement="nav" />
 
           {/* MOBILE CONTACT BUTTONS */}
           <div className="flex gap-3 pt-4">
