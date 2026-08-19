@@ -69,7 +69,7 @@ export default function Header() {
           </Link>
 
           {/* DESKTOP NAV */}
-          <nav className="hidden lg:flex items-center gap-8 text-base font-medium">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm xl:text-base font-medium whitespace-nowrap">
             <NavLink href="/" label="Home" />
             <NavLink href="/about-us" label="About" />
 
