@@ -27,6 +27,16 @@ const nextConfig = {
     ],
   },
 
+  async redirects() {
+    return [
+      {
+        source: '/download',
+        destination: 'https://app.1stcalluk.co.uk/download',
+        permanent: true,
+      },
+    ];
+  },
+
   async headers() {
     return [
       {
