@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import DownloadAppButton from "./DownloadAppButton";
 
 const PORTAL_ORIGIN = (
-  process.env.NEXT_PUBLIC_PORTAL_URL || "https://1st-calluk-portal-1stcall-uk.vercel.app"
+  process.env.NEXT_PUBLIC_PORTAL_URL || "https://1st-calluk-portal-zeta.vercel.app"
 ).replace(/\/$/, "");
 
 export default function Header() {
@@ -55,38 +55,18 @@ export default function Header() {
 
       {/* MAIN HEADER */}
       <div className="bg-[#2d459c]">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 flex items-center justify-between">
-
-          {/* LOGO + CONTACT */}
-          <div className="flex flex-col items-start gap-3 pl-4 md:pl-6">
-            <Link href="/">
-              <div className="w-[260px] h-[100px] relative bg-white rounded-xl shadow-md border border-white/40 overflow-hidden">
-                <Image
-                  src="/1st-call-financial-services.jpg"
-                  alt="1st Call UK Financial Services Logo"
-                  fill
-                  priority
-                  className="object-contain"
-                />
-              </div>
-            </Link>
-
-            {/* DESKTOP CONTACT BUTTONS */}
-            <div className="hidden md:flex gap-4 w-[260px] justify-center">
-              <a
-                href="tel:+441158453265"
-                className="bg-white text-[#2d459c] font-semibold py-2.5 w-1/2 rounded-lg shadow hover:bg-gray-100 transition flex items-center justify-center gap-2"
-              >
-                📞 Call Us
-              </a>
-              <a
-                href="mailto:info@1stcalluk.com"
-                className="bg-white text-[#2d459c] font-semibold py-2.5 w-1/2 rounded-lg shadow hover:bg-gray-100 transition flex items-center justify-center gap-2"
-              >
-                ✉ Email Us
-              </a>
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
+          <Link href="/" className="block shrink-0">
+            <div className="relative h-[72px] w-[220px] overflow-hidden rounded-xl border border-white/40 bg-white shadow-md md:h-[80px] md:w-[240px]">
+              <Image
+                src="/1st-call-financial-services.jpg"
+                alt="1st Call UK Financial Services Logo"
+                fill
+                priority
+                className="object-contain"
+              />
             </div>
-          </div>
+          </Link>
 
           {/* DESKTOP NAV */}
           <nav className="hidden lg:flex items-center gap-8 text-base font-medium">
