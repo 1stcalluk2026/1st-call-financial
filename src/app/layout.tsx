@@ -108,7 +108,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   "@id": "https://www.1stcalluk.financial/#website",
                   "url": "https://www.1stcalluk.financial",
                   "name": "1st Call UK Financial Services",
-                  "publisher": { "@id": "https://www.1stcalluk.financial/#organization" }
+                  "publisher": { "@id": "https://www.1stcalluk.financial/#organization" },
+                  "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                      "@type": "EntryPoint",
+                      "urlTemplate": "https://www.1stcalluk.financial/search?q={search_term_string}",
+                    },
+                    "query-input": "required name=search_term_string",
+                  },
                 },
                 {
                   "@type": "BreadcrumbList",
